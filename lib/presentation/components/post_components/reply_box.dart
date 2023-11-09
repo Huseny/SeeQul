@@ -23,7 +23,7 @@ class ReplyBox extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 5),
             child: CircleAvatar(
               foregroundImage: AssetImage(userProfileUrl),
             ),
@@ -36,14 +36,14 @@ class ReplyBox extends StatelessWidget {
                 children: [
                   Text(reply.replierName),
                   const SizedBox(
-                    width: 8,
+                    width: 1,
                   ),
                   Text(
                     "@${reply.replierUsername}",
                     style: const TextStyle(color: Color(0xff5C8DFF)),
                   ),
                   const SizedBox(
-                    width: 25,
+                    width: 5,
                   ),
                   const Text(
                     "3 hours ago",
@@ -55,7 +55,7 @@ class ReplyBox extends StatelessWidget {
                 height: 10,
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.7,
+                width: MediaQuery.of(context).size.width * 0.4,
                 child: Text(
                   reply.reply,
                   overflow: TextOverflow.clip,

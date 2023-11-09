@@ -73,6 +73,17 @@ class CommentBox extends StatelessWidget {
                     color: const Color(0xffC4C4C4),
                     number: comment.replies.length.toString(),
                     icon: Icons.comment_outlined,
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                              pageBuilder: (context, _, an) => RepliesPage(
+                                    name: name,
+                                    username: username,
+                                    userProfileUrl: userProfileUrl,
+                                    comment: comment,
+                                  )));
+                    },
                   ),
                   const SizedBox(
                     width: 20,

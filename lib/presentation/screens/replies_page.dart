@@ -6,6 +6,7 @@ import 'package:seequl/models/comment_model.dart';
 import 'package:seequl/models/reply_model.dart';
 import 'package:seequl/presentation/components/post_components/custom_appbar.dart';
 import 'package:seequl/presentation/components/post_components/repliable_comments.dart';
+import 'package:seequl/presentation/components/post_components/reply_box.dart';
 
 class RepliesPage extends StatefulWidget {
   final CommentModel comment;
@@ -78,6 +79,27 @@ class _RepliesPageState extends State<RepliesPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ReplieableComment(comment: widget.comment),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        ReplyBox(
+                          name: widget.name,
+                          username: widget.username,
+                          userProfileUrl: widget.userProfileUrl,
+                          reply: Reply(
+                              replierUsername: widget.username,
+                              replierName: widget.name,
+                              reply: "Whatever man",
+                              noLikes: "0",
+                              noShares: "0"),
+                        )
+                      ],
+                    ),
                     const SizedBox(
                       height: 10,
                     ),
